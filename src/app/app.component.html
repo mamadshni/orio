@@ -1,7 +1,9 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="content">
-  <div class="row">
-    <div class="col-md-12"></div>
-  </div>
+<app-bg-line [strokeColor]="bgStroke"></app-bg-line>
+<app-test-list [isOpen]="isOpen"></app-test-list>
+<div class="button_container" [ngClass]="{'active': isOpen}" (click)="open()">
+  <span class="top"></span>
+  <span class="middle"></span>
+  <span class="bottom"></span>
 </div>
-<router-outlet></router-outlet>
+
+<app-overlay-menu [isOpen]="isOpen"></app-overlay-menu>

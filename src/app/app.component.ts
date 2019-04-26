@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'orio';
+  bgStroke = '#000';
+  isOpen: boolean;
+  open() {
+    this.isOpen = this.isOpen === true ? false : true;
+  }
 }
