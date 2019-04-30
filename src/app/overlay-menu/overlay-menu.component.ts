@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 
+import { TimelineLite, Power3, Power1 } from 'gsap';
 @Component({
   selector: 'app-overlay-menu',
   templateUrl: './overlay-menu.component.html',
