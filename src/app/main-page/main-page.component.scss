@@ -8,6 +8,16 @@ $color-link: #fff;
 $button-height: 27px;
 $button-width: 35px;
 
+.main {
+
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.fade-in {
+  transition: opacity 0.4s ease-in-out;
+  opacity: 1 !important;
+}
 
 .blur {
   -webkit-filter: blur(8px);
@@ -15,13 +25,13 @@ $button-width: 35px;
 }
 
 .container {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   visibility: visible;
   opacity: 1;
   text-align: center;
-  top: 40%;
+  padding-top: 400px;
   left: 0;
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;

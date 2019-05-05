@@ -6,8 +6,6 @@
   <span class="bottom"></span>
 </div>
 
-<app-overlay-menu [isOpen]="isOpen"></app-overlay-menu>
+<app-overlay-menu *ngIf="isOpen"></app-overlay-menu>
 
-
-<app-test-list [appOverlaySlider]="isOpen"></app-test-list>
-<app-hero-section [appOverlaySlider]="isOpen"></app-hero-section>
+<app-main-page [isOpen]="isOpen"></app-main-page>

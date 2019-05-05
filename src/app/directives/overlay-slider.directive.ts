@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import { Directive, ElementRef, Input, NgZone } from '@angular/core';
 
 import { TweenMax, Power3, Power2 } from 'gsap';
 @Directive({
@@ -7,18 +7,20 @@ import { TweenMax, Power3, Power2 } from 'gsap';
 export class OverlaySliderDirective {
   isMenuOpened: boolean;
   @Input('appOverlaySlider') set isOpen(value: boolean) {
-    if (value === false) {
-      this.afterCloseMenu();
-      this.isMenuOpened = false;
-    } else if (value) {
-      this.afterOpenMenu();
-      this.isMenuOpened = true;
-    } else {
-      this.firstPossession();
-      this.isMenuOpened = false;
-    }
+    this.zone.runOutsideAngular(() => {
+      if (value === false) {
+        this.afterCloseMenu();
+        this.isMenuOpened = false;
+      } else if (value) {
+        this.afterOpenMenu();
+        this.isMenuOpened = true;
+      } else {
+        this.firstPossession();
+        this.isMenuOpened = false;
+      }
+    });
   }
-  constructor(private elRef: ElementRef) {}
+  constructor(private elRef: ElementRef, private zone: NgZone) {}
 
   firstPossession() {
     TweenMax.set(this.elRef.nativeElement, { y: 200, opacity: 0 });
@@ -26,7 +28,7 @@ export class OverlaySliderDirective {
       force3D: true,
       opacity: 1,
       y: 0,
-      delay: 2.4,
+      delay: 0.4,
       ease: Power2.easeOut
     });
   }

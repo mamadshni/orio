@@ -1,17 +1,17 @@
 <!-- hero text section  -->
-<div class="hero--wrapper" #hero_wrapper>
-  <div class="hero--wrapper--style">
+<div class="hero--wrapper" [appOverlaySlider]="isOpen">
+  <div class="hero--wrapper--style" appScrollSlide="transform">
     <div class="hero--wrapper--content">
 
-      <h1 class="hero-title">Tina Turner</h1>
-      <p class="hero-subtitle">Photography</p>
+      <h1 class="hero-title">Mamad Tala</h1>
+      <p class="hero-subtitle">Lorem ipsum dolor sit amet.</p>
 
     </div>
   </div>
 </div>
 
 
-<div class="bg--wrapper" #image_wrapper>
-  <div class="bg--wrapper__image" [style.background-image]="'url('+ imageUrl +')'"></div>
+<div class="bg--wrapper" appScrollSlide="opacity" className="fade-out">
+  <div class=" bg--wrapper__image" [style.background-image]="'url('+ imageUrl +')'"></div>
 </div>
 <div class="hero--height"></div>
