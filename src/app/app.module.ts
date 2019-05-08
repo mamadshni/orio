@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { OverlayMenuComponent } from './overlay-menu/overlay-menu.component';
 import { BgLineComponent } from './bg-line/bg-line.component';
 import { HeroSectionComponent } from './sections/hero-section/hero-section.component';
-import { OverlaySliderDirective } from './directives/overlay-slider.directive';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ScrollSlideDirective } from './directives/scroll-slide.directive';
 @NgModule({
@@ -17,7 +16,6 @@ import { ScrollSlideDirective } from './directives/scroll-slide.directive';
     OverlayMenuComponent,
     BgLineComponent,
     HeroSectionComponent,
-    OverlaySliderDirective,
     MainPageComponent,
     ScrollSlideDirective
   ],

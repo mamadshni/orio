@@ -4,8 +4,7 @@ import {
   ElementRef,
   Input,
   OnInit,
-  OnDestroy,
-  DoCheck
+  OnDestroy
 } from '@angular/core';
 
 @Directive({

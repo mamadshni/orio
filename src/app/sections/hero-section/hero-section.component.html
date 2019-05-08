@@ -1,5 +1,5 @@
 <!-- hero text section  -->
-<div class="hero--wrapper" [appOverlaySlider]="isOpen">
+<div class="hero--wrapper" [@menuSliderAnimation]="isOpen ? 'open' : 'close'">
   <div class="hero--wrapper--style" appScrollSlide="transform">
     <div class="hero--wrapper--content">
 

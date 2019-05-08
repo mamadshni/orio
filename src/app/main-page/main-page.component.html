@@ -1,6 +1,6 @@
-<app-hero-section [isOpen]="isOpen"></app-hero-section>
+<app-hero-section></app-hero-section>
 
-<div class="container" [appOverlaySlider]="isOpen">
+<div class="container" [@menuSliderAnimation]="isOpen ? 'open' : 'close'">
   <div appScrollSlide="opacity" className="fade-in" class="main">
 
     <h1>number -- 1</h1>

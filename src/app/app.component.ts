@@ -1,22 +1,22 @@
-import { Component, DoCheck } from '@angular/core';
+import { HeaderMenuService } from './services/header-menu.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements DoCheck {
-  // isMenuClosed = true;
+export class AppComponent implements OnInit {
+  constructor(private headerMenuService: HeaderMenuService) {}
+
   bgStroke = '#000';
   isOpen = false;
-  open() {
-    this.isOpen = this.isOpen === true ? false : true;
-  }
-  isMenuClosed(x: boolean) {
-    // this.isOpen = false;
-  }
 
-  ngDoCheck() {
-    console.log(1);
+  ngOnInit() {}
+
+  open() {
+    const open = this.isOpen === true ? false : true;
+    this.headerMenuService.isMenuOpened.next(open);
+    this.isOpen = open;
   }
 }

@@ -1,11 +1,11 @@
 // tslint:disable:use-host-property-decorator
 import { Component, OnInit } from '@angular/core';
-import { menuItemAnimation } from '../animations/menu-items.animation';
+import { MenuItemsAnimation } from '../animations/menu-items.animation';
 @Component({
   selector: 'app-overlay-menu',
   templateUrl: './overlay-menu.component.html',
   styleUrls: ['./overlay-menu.component.scss'],
-  animations: [menuItemAnimation()],
+  animations: [MenuItemsAnimation()],
   host: {
     '[@menuListAnimation]': ''
   }

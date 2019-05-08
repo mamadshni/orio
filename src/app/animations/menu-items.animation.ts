@@ -4,38 +4,34 @@ import {
   style,
   query,
   stagger,
-  animate,
-  keyframes
+  animate
 } from '@angular/animations';
 
-export function menuItemAnimation() {
+export function MenuItemsAnimation() {
   return trigger('menuListAnimation', [
     transition(':enter', [
-      query('li', style({ opacity: 0 })),
       query(
-        'li',
-        stagger('150ms', [
+        '[listItems]',
+        style({ opacity: 0, transform: 'translateY(70px)' })
+      ),
+      query(
+        '[listItems]',
+        stagger('100ms', [
           animate(
-            '0.4s 500ms ease-out',
-            keyframes([
-              style({ opacity: 0, transform: 'translateY(75px)', offset: 0 }),
-              style({ opacity: 1, transform: 'translateY(0px)', offset: 1 })
-            ])
+            '0.3s 300ms cubic-bezier(.22,.68,.43,1.01)',
+            style({ opacity: 1, transform: 'translateY(0px)' })
           )
         ])
       )
     ]),
     transition(':leave', [
-      query('li', style({ opacity: 1 })),
+      query('[listItems]', style({ opacity: 1 })),
       query(
-        'li',
-        stagger('100ms', [
+        '[listItems]',
+        stagger('50ms', [
           animate(
-            '0.25s ease-out',
-            keyframes([
-              style({ opacity: 1, transform: 'translateY(0px)', offset: 0 }),
-              style({ opacity: 0, transform: 'translateY(-75px)', offset: 1 })
-            ])
+            '0.25s 50ms cubic-bezier(.56,.07,.78,.57)',
+            style({ opacity: 0, transform: 'translateY(-80px)' })
           )
         ])
       )
