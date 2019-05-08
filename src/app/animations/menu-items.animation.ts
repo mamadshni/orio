@@ -7,7 +7,7 @@ import {
   animate
 } from '@angular/animations';
 
-export function MenuItemsAnimation() {
+export function menuItemsAnimation() {
   return trigger('menuListAnimation', [
     transition(':enter', [
       query(
