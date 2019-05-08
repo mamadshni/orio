@@ -21,7 +21,7 @@ export function menuSliderAnimation() {
       animate(
         '0.3s 100ms cubic-bezier(.56,.07,.78,.57)',
         style({ opacity: 0, transform: 'translateY(-150px)' })
-      )``
+      )
     ])
   ]);
 }
